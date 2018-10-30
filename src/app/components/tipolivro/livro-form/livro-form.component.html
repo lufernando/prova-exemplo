@@ -1,0 +1,36 @@
+<fieldset>
+  <legend>Cadastro de Livros</legend>
+  <div>
+    Titulo
+    <input type="text" [(ngModel)]="livro.titulo" />
+  </div>
+
+  <div>
+    Data de Publicação
+    <input type="text" [(ngModel)]="livro.data_de_publicacao" />
+  </div>
+  
+
+  <div>
+    <select [(ngModel)]="livro.id_autor.id">
+      <label>Autores: </label>
+      <option value="undefined">Selecione</option>
+      <option *ngFor="let autor of autores" value="{{autor.id}}">{{autor.nome}}</option>
+    </select>
+  </div>
+
+  <div>
+    <select [(ngModel)]="livro.id_categoria.id">
+      <label>Categorias: </label>
+      <option value="undefined">Selecione</option>
+      <option *ngFor="let categoria of categorias" value="{{categoria.id}}">{{categoria.descricao}}</option>
+    </select>
+  </div>
+
+  <div>
+    <button (click)="inserir()">Salvar</button>
+  </div>
+
+</fieldset>
+
+  
